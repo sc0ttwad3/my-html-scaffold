@@ -8,6 +8,10 @@ An html scaffold for starting web projects
 
 ## Development
 
+Serve the contents during development with a local HTTP2 server [simplehttp2server](https://github.com/GoogleChrome/simplehttp2server) from the Google Chrome team:
+
+On first run will drop ``cert.perm`` and ``key.perm`` into directory being served
+
 ## Setup
 
 ```

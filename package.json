@@ -4,8 +4,17 @@
   "description": "An html scaffold for starting web projects",
   "main": "index.js",
   "scripts": {
+    "start": "simplehttp2server src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Scott Wade <sc0ttwad3@gmail.com> (http://sc0ttwad3.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sc0ttwad3/my-html-scaffold.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sc0ttwad3/my-html-scaffold/issues"
+  },
+  "homepage": "https://github.com/sc0ttwad3/my-html-scaffold#readme"
 }
