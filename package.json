@@ -1,0 +1,11 @@
+{
+  "name": "my-html-scaffold",
+  "version": "0.0.1",
+  "description": "An html scaffold for starting web projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Scott Wade <sc0ttwad3@gmail.com> (http://sc0ttwad3.com)",
+  "license": "MIT"
+}
