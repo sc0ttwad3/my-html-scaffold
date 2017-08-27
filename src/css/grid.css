@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Grid styles: opinionated defaults
+   ========================================================================== */
+
+/**
+  See: https://rachelandrew.co.uk/archives/2017/06/01/breaking-out-with-css-grid-explained/
+  See (older): https://cloudfour.com/thinks/breaking-out-with-css-grid-layout/
+**/
+
+/**
+ * 1. Use grid.
+ * 2. Gutter space.
+ * 3. Center at large sizes.
+ * 4. Set maximum width.
+ */
+
+/* Maybe use Modernizr to detect? */
+
+.container {
+  display: grid; /* 1 */
+  grid-gap: 1.5em; /* 2 */
+  margin: 1.5em auto; /* 2, 3 */
+  max-width: 64em; /* 4 */
+  padding: 0 1.5em; /* 2 */
+}
+
+/**
+ * Sidebar inherits grid display styles and gap size. This will be simpler once `display: subgrid` is supported!
+ */
+
+.sidebar {
+  display: inherit;
+  grid-gap: inherit;
+}
+
+/*  THIS IS MEDIA SIZES TO BE Transitioned to the grid below */
+/**
+ * At slightly wider sizes, show sidebar elements side by side (each taking up half the space, minus gutter gap and stuff).
+ */
+
+@media (min-width: 34em) and (max-width: 49.9375em) {
+  .sidebar {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/**
+ * At even wider sizes…
+ */
+
+@media (min-width: 50em) {
+
+  /**
+   * Establish one primary (⅔) column and one secondary (⅓) column.
+   */
+
+  .container {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  /**
+   * 1. Automatically create sidebar rows that are as short as their content will allow.
+   * 2. Make this element span two rows, allowing prose elements to flow to its left.
+   */
+
+  .sidebar {
+    grid-auto-rows: min-content; /* 1 */
+    grid-row: span 2; /* 2 */
+  }
+}
+
+.grid {
+  display: grid;
+  grid-gap: 20px;
+  grid-auto-rows: 150px;
+  grid-template-columns:
+    [full-start] minmax(1em, 1fr)
+    [main-start] minmax(0, 40em) [main-end]
+    minmax(1em, 1fr) [full-end];
+}
+
+.grid > * {
+  /* grid-column: main-start; */
+  grid-column: main;
+}
+
+.grid > .full {
+  grid-column: full-start / full-end;
+  grid-column: full;
+
+
+}
+
+.grid > div {
+  background-color: rgb(214, 214, 214);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.grid > div:nth-child(odd) {
+  background-color: rgb(218, 191, 255);
+}
+
+
+/**  Without names: same as above
+.grid {
+  display: grid;
+  grid-gap: 20px;
+  grid-auto-rows: 150px;
+  grid-template-columns:
+    minmax(1em, 1fr)
+    minmax(0, 40em)
+    minmax(1em, 1fr);
+}
+
+.grid > * {
+  grid-column: 2 ;
+}
+
+.grid > .full {
+  grid-column: 1 / 4;
+}
+
+.grid > div {
+  background-color: rgb(144, 122, 214);
+  font-weight: bold;
+  font-family: Baloo, sans-serif;
+  font-size: 2.157rem;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.grid > div:nth-child(odd) {
+  background-color: rgb(218, 191, 255);
+}
+**/
