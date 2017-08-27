@@ -1,0 +1,201 @@
+API_Docs/
+coverage/
+yarn-error.log
+!index.js
+build
+test
+
+.vscode
+
+coverage
+.nyc_output
+*.log
+
+*.tmp
+*.bak
+*.scc
+*.diff
+*.err
+*.orig
+*.pid
+*.seed
+*.log
+*.log*
+*.swp
+*.vi
+*~
+*.sass-cache
+.sass-cache
+.tmp
+~$*
+.hg
+.svn
+.CVS
+.dist
+.builds
+.eslintcache
+.gatsby-context.js
+.lock-wscript
+.grunt
+.gulp
+.module-cache
+.eslintcache
+
+# Ignore compressed/packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+
+# Ignore local node modules from npm
+node_modules
+_bower_components
+jspm_packages
+
+
+# due to build transpiling
+lib
+dist
+_dist
+.dist
+output
+serve
+prod
+serve
+static
+_site
+_deploy
+_archive
+archive
+_scratch
+scratch
+workspace
+npm-debug.log
+.eslintcache
+.backup
+test
+temp
+#_coursework
+
+
+
+# OSX
+._*
+.AppleDouble
+.DS_Store
+.localized
+.LSOverride
+.Spotlight-V101
+.Trashes
+Icon
+.eprj
+
+# Tags
+# Ignore tags created by etags and ctags
+TAGS
+tags
+
+# Folders to ignore
+.hg
+.svn
+.CVS
+intermediate
+publish
+coverage
+lib-cov
+pids
+logs
+
+# JetBrains IDE and related
+.idea
+
+# Sublime
+
+
+
+### Node ###
+
+# Logs
+logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional npm cache directory
+.npm
+
+# Dependency directories
+/node_modules
+/jspm_packages
+/bower_components
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Optional eslint cache
+.eslintcache
+
+# dotenv environment variables file(s)
+.env
+.env.*
+
+#Build generated
+dist/
+build/
+
+### SublimeText ###
+# cache files for sublime text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-project
+*.sublime-workspace
+*.sublime-projectcompletions
+
+# project files should be checked into the repository, unless a significant
+# proportion of contributors will probably not be using SublimeText
+# *.sublime-project
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### WebStorm/IntelliJ ###
+/.idea
+modules.xml
+*.ipr
+
+
+### System Files ###
+.DS_Store
+
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent

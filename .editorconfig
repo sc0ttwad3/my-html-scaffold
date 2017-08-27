@@ -1,0 +1,45 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# all files
+[*]
+end_of_line = crlf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+max_line_length = 120
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.js]
+quote_type = single
+curly_bracket_next_line = false
+spaces_around_operators = true
+spaces_around_brackets = inside
+indent_brace_style = BSD KNF
+
+[*.ts]
+quote_type = single
+curly_bracket_next_line = false
+spaces_around_operators = true
+spaces_around_brackets = inside
+indent_brace_style = BSD KNF
+
+[*.py]
+indent-size = 4
+indent-style = space
+
+# HTML
+[*.html]
+quote_type = double
+
+[{.travis.yml,package.json}]
+# The indent size used in the `package.json` file cannot be changed
+# https://github.com/npm/npm/pull/3180#issuecomment-16336516
+indent_size = 2
+indent_style = space
