@@ -6,6 +6,8 @@ An html scaffold for starting web projects
 
 ## Contains
 
+starter ☕️
+
 ## Development
 
 Serve the contents during development with a local HTTP2 server [simplehttp2server](https://github.com/GoogleChrome/simplehttp2server) from the Google Chrome team:
