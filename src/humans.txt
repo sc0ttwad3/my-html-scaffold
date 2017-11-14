@@ -3,11 +3,11 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+   Scott Wade -- Developer -- @scottwade
 
 # THANKS
 
-    <name>
+  FSF, EFF, ACLU, DNC
 
 # TECHNOLOGY COLOPHON
 
