@@ -22,23 +22,10 @@ not everything fits with everyone's needs.
 
 ## App Stores
 
-### Install a Chrome Web Store app
-
-Users can install a Chrome app directly from your website, as long as
-the app and site have been associated via Google's Webmaster Tools.
-Read more on [Chrome Web Store's Inline Installation
-docs](https://developer.chrome.com/webstore/inline_installation).
-
-```html
-<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/APP_ID">
-```
-
 ### Smart App Banners in iOS 6+ Safari
 
 Stop bothering everyone with gross modals advertising your entry in the
-App Store. Include the following [meta tag](https://developer.apple.com/library/IOS/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html#//apple_ref/doc/uid/TP40002051-CH6-SW2)
-will unintrusively allow the user the option to download your iOS app,
-or open it with some data about the user's current state on the website.
+App Store. Including the following [meta tag](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html) will unobtrusively give the user the option to download your iOS app,or open it with some data about the user's current state on the website.
 
 ```html
 <meta name="apple-itunes-app" content="app-id=APP_ID,app-argument=SOME_TEXT">
@@ -228,28 +215,6 @@ $(function(){
 
 ## Internet Explorer
 
-### Prompt users to switch to "Desktop Mode" in IE10 Metro
-
-IE10 does not support plugins, such as Flash, in Metro mode. If
-your site requires plugins, you can let users know that via the
-`x-ua-compatible` meta element, which will prompt them to switch
-to Desktop Mode.
-
-```html
-<meta http-equiv="x-ua-compatible" content="requiresActiveX=true">
-```
-
-Here's what it looks like alongside H5BP's default `x-ua-compatible`
-values:
-
-```html
-<meta http-equiv="x-ua-compatible" content="ie=edge,requiresActiveX=true">
-```
-
-You can find more information in [Microsoft's IEBlog post about prompting for
-plugin use in IE10 Metro
-Mode](https://blogs.msdn.microsoft.com/ie/2012/01/31/web-sites-and-a-plug-in-free-web/).
-
 ### IE Pinned Sites (IE9+)
 
 Enabling your application for pinning will allow IE9 users to add it to their
@@ -280,10 +245,10 @@ mouse over your Pinned Site's icon.
 If the site should go to a specific URL when it is pinned (such as the
 homepage), enter it here. One idea is to send it to a special URL so you can
 track the number of pinned users, like so:
-`http://www.example.com/index.html?pinned=true`
+`https://www.example.com/index.html?pinned=true`
 
 ```html
-<meta name="msapplication-starturl" content="http://www.example.com/index.html?pinned=true">
+<meta name="msapplication-starturl" content="https://www.example.com/index.html?pinned=true">
 ```
 
 ### Recolor IE's controls manually for a Pinned Site
@@ -342,7 +307,7 @@ or one of a predefined list of glyphs.
 * [Available badge values](https://msdn.microsoft.com/en-us/library/ie/br212849.aspx)
 
 ```html
-<meta name="msapplication-badge" value="frequency=NUMBER_IN_MINUTES;polling-uri=http://www.example.com/path/to/file.xml">
+<meta name="msapplication-badge" value="frequency=NUMBER_IN_MINUTES;polling-uri=https://www.example.com/path/to/file.xml">
 ```
 
 ### Disable link highlighting upon tap in IE10
@@ -362,17 +327,17 @@ You can read about this useful element and more techniques in
 
 ### Direct search spiders to your sitemap
 
-After creating a [sitemap](http://www.sitemaps.org/protocol.html)
+After creating a [sitemap](https://www.sitemaps.org/protocol.html)
 
 Submit it to search engine tool:
 * [Google](https://www.google.com/webmasters/tools/sitemap-list)
-* [Bing](http://www.bing.com/toolbox/webmaster)
+* [Bing](https://www.bing.com/toolbox/webmaster)
 * [Yandex](https://webmaster.yandex.com/)
-* [Baidu](http://zhanzhang.baidu.com/)
+* [Baidu](https://zhanzhang.baidu.com/)
 OR
 Insert the following line anywhere in your robots.txt file, specifying the path to your sitemap:
 ```
-Sitemap: http://example.com/sitemap_location.xml
+Sitemap: https://example.com/sitemap_location.xml
 ```
 
 ### Hide pages from search engines
@@ -414,7 +379,7 @@ plugin](https://www.google.com/search?ie=UTF-8&q=how+to+make+browser+search+plug
 
 * If you want to disable the translation prompt in Chrome or block Google
   Translate from translating your web page, use [`<meta name="google"
-  value="notranslate">`](https://support.google.com/translate/?hl=en#2641276).
+  content="notranslate">`](https://support.google.com/webmasters/answer/79812).
   To disable translation for a particular section of the web page, add
   [`class="notranslate"`](https://support.google.com/translate/?hl=en#2641276).
 
@@ -425,10 +390,6 @@ plugin](https://www.google.com/search?ie=UTF-8&q=how+to+make+browser+search+plug
 * Avoid development/stage websites "leaking" into SERPs (search engine results
   page) by [implementing X-Robots-tag
   headers](https://github.com/h5bp/html5-boilerplate/issues/804).
-
-* Screen readers currently have less-than-stellar support for HTML5 but the JS
-  script [accessifyhtml5.js](https://github.com/yatil/accessifyhtml5.js) can
-  help increase accessibility by adding ARIA roles to HTML5 elements.
 
 
 ## News Feeds
@@ -446,7 +407,7 @@ scratch](http://www.rssboard.org/rss-specification)?
 
 Atom is similar to RSS, and you might prefer to use it instead of or in
 addition to it. [See what Atom's all
-about](http://www.atomenabled.org/developers/syndication/).
+about](https://en.wikipedia.org/wiki/Atom_(Web_standard)).
 
 ```html
 <link rel="alternate" type="application/atom+xml" title="Atom" href="/atom.xml">
@@ -488,10 +449,10 @@ registration to Facebook).
 
 ```html
 <meta property="fb:app_id" content="123456789">
-<meta property="og:url" content="http://www.example.com/path/to/page.html">
+<meta property="og:url" content="https://www.example.com/path/to/page.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="">
-<meta property="og:image" content="http://www.example.com/path/to/image.jpg">
+<meta property="og:image" content="https://www.example.com/path/to/image.jpg">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="">
 <meta property="article:author" content="">
@@ -512,10 +473,10 @@ your markup with the [Card validator](https://cards-dev.twitter.com/validator)
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@site_account">
 <meta name="twitter:creator" content="@individual_account">
-<meta name="twitter:url" content="http://www.example.com/path/to/page.html">
+<meta name="twitter:url" content="https://www.example.com/path/to/page.html">
 <meta name="twitter:title" content="">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="http://www.example.com/path/to/image.jpg">
+<meta name="twitter:image" content="https://www.example.com/path/to/image.jpg">
 ```
 
 ### Google+ / Schema.org
@@ -551,8 +512,8 @@ top `html` tag.
 
 Signal to search engines and others "Use this URL for this page!" Useful when
 parameters after a `#` or `?` is used to control the display state of a page.
-`http://www.example.com/cart.html?shopping-cart-open=true` can be indexed as
-the cleaner, more accurate `http://www.example.com/cart.html`.
+`https://www.example.com/cart.html?shopping-cart-open=true` can be indexed as
+the cleaner, more accurate `https://www.example.com/cart.html`.
 
 ```html
 <link rel="canonical" href="">
@@ -579,12 +540,12 @@ This can be done by adding the following annotations in your HTML pages:
 * on the desktop page, add the `link rel="alternate"` tag pointing to the
   corresponding mobile URL, e.g.:
 
-  `<link rel="alternate" media="only screen and (max-width: 640px)" href="http://m.example.com/page.html" >`
+  `<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.example.com/page.html" >`
 
 * on the mobile page, add the `link rel="canonical"` tag pointing to the
   corresponding desktop URL, e.g.:
 
-  `<link rel="canonical" href="http://www.example.com/page.html">`
+  `<link rel="canonical" href="https://www.example.com/page.html">`
 
 For more information please see:
 
@@ -601,7 +562,7 @@ added to the Home Screen on iOS:
 provide the default iOS app view. You can control the color scheme of the
 default view by adding `apple-mobile-web-app-status-bar-style`.
 
-  ```html
+```html
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 ```
@@ -609,7 +570,7 @@ default view by adding `apple-mobile-web-app-status-bar-style`.
 * You can use `apple-mobile-web-app-title` to add a specific sites name for the
 Home Screen icon. This works since iOS 6.
 
-  ```html
+```html
 <meta name="apple-mobile-web-app-title" content="">
 ```
 
@@ -642,11 +603,11 @@ Displays meaning:
 More information about the displays of iOS devices can be found
 [here](https://en.wikipedia.org/wiki/List_of_iOS_devices#Display).
 
-In most cases, one `180×180px` touch icon named `apple-touch-icon.png`
+In most cases, one `180×180px` touch icon named `icon.png`
 and including:
 
 ```html
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" href="icon.png">
 ```
 
 in the `<head>` of the page is enough. If you use art-direction and/or
@@ -705,5 +666,4 @@ their UIs with varying colors.
 The `content` attribute extension can take any valid CSS color.
 
 Currently, the `theme-color` meta extension is supported by [Chrome 39+
-for Android Lollipop](https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android)
-and [Firefox OS 2.1+](https://twitter.com/ahmednefzaoui/status/492344698493997057).
+for Android Lollipop](https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android).
