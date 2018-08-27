@@ -1,6 +1,6 @@
 {
   "name": "my-html-scaffold",
-  "version": "0.0.1",
+  "version": "0.1.9",
   "description": "An html scaffold for starting web projects",
   "main": "index.js",
   "scripts": {
