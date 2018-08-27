@@ -4,10 +4,14 @@
  */
 
 /* existy(x) - define the existence of something and not null or undefined */
-export function existy(x) { return x != null; }
+export function existy(x) {
+  return x != null;
+}
 
 /* truthy(x) - determine if something should be a synonym for true */
-export function truthy(x) { return (x !== false) && existy(x); }
+export function truthy(x) {
+  return x !== false && existy(x);
+}
 
 // Simplest example compare function
 export function compare(a, b) {
@@ -22,16 +26,14 @@ export function compare(a, b) {
 
 // dynamic compare object key/valuess
 export function compareValues(key, order = 'asc') {
-  return function (a, b) {
+  return function(a, b) {
     if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
       // property doesn't exist on either object
       return 0;
     }
 
-    const varA = (typeof a[key] === 'string') ?
-      a[key].toUpperCase() : a[key];
-    const varB = (typeof b[key] === 'string') ?
-      b[key].toUpperCase() : b[key];
+    const varA = typeof a[key] === 'string' ? a[key].toUpperCase() : a[key];
+    const varB = typeof b[key] === 'string' ? b[key].toUpperCase() : b[key];
 
     let comparison = 0;
     if (varA > varB) {
@@ -39,14 +41,9 @@ export function compareValues(key, order = 'asc') {
     } else if (varA < varB) {
       comparison = -1;
     }
-    return (
-      (order == 'desc') ? (comparison * -1) : comparison
-    );
+    return order == 'desc' ? comparison * -1 : comparison;
   };
 }
-
-
-
 
 /* memoize(fn) -
  *
@@ -55,12 +52,9 @@ export function memoize(fn) {
   var prevArg;
   var prevResult;
 
-  return function (arg) {
-    return arg === prevArg ?
-      prevResult :
-      (prevArg = arg,
-        prevResult = fn.call(this, arg));
-  }
+  return function(arg) {
+    return arg === prevArg ? prevResult : ((prevArg = arg), (prevResult = fn.call(this, arg)));
+  };
 }
 
 /* shallowEqual(objA, objB) -   */
@@ -82,7 +76,7 @@ export function shallowEqual(objA, objB) {
   return true;
 }
 
-
+/*  For illustration only
 export function map([head, ...tail], fn) {
   if (head === undefined && !tail.length) return [];
   return tail.length ? [fn(head), ...(map(tail, fn))] : [fn(head)];
@@ -104,38 +98,4 @@ export function reduce([head, ...tail], fn, initial) {
   return tail.length ? reduce(tail, fn, fn(initial, head)) : [fn(initial, head)];
 }
 
-
-
-
-
-
-/* isPrime(num) - true test for determining if a number is prime */
-export function isPrime(num) {
-  // if num is less than 2 or not an integer then cannot be prime
-  if (num < 2) { return false; }
-  if (num !== Math.round(num)) { return false; }
-
-  // Now assume num is prime, try prove is not
-  let isItPrime = true;
-
-  // now check every whole number from 2 to the square root of n.
-  // if any of these divides num exactly, num cannnot be prime.
-  for (var i = 2; i <= Math.sqrt(num); i++) {
-    if (num % i === 0) { isItPrime = false; }
-  }
-
-  // finally return result if prime or not
-  return isItPrime;
-}
-
-
-// Generate cryptographically secure random string for
-// use as a password salt using Node's built-in crypto.RandomBytes()
-export function createSalt(keyLength, cb) {
-  crypto.randomBytes(keyLength, (err, buff) => {
-    if (err) {
-      return cb(err);
-    }
-    cb(null, buff.toString('base64'));
-  });
-}
+*/
