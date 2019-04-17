@@ -15,20 +15,18 @@
   <!-- Place favicon.ico in the root directory -->
 
   <!--<link rel="stylesheet" ref="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">-->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/normalize-opentype.css">
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/normalize-opentype.css">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="//unpkg.com/chota@latest">
-  <link rel="stylesheet" href="/css/grid.css">
-  <!--<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>-->
-  <script src="js/vendor/jquery-3.3.1.min.js"></script>
-  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="css/post.css">
 </head>
 
 <body>
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
+	<div class="container">
   <header>
     <h1>my-html-scaffold</h1>
   </header>
@@ -64,7 +62,7 @@
             <a class="" href="404.html">404 Error Page</a>
           </li>
           <li>
-            <a href="">Another link</a>
+            <a href="link.html">Another link</a>
           </li>
         </ul>
       </div>
@@ -98,10 +96,9 @@
     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
       eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
   </footer>
-
-  <!--  If needed
-<script src="js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+	</div>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="//code.jquery.com/jquery-3.4.0.min.js" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.0.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
@@ -110,7 +107,6 @@
     https://minimalanalytics.com/
 
     UPDATE your tracking-id
-  -->
   <script>
   (function(a,b,c){var d=a.history,e=document,f=navigator||{},g=localStorage,
   h=encodeURIComponent,i=d.pushState,k=function(){return Math.random().toString(36)},
@@ -130,16 +126,8 @@
   a.ma={trackEvent:function o(r,s,t,u){return n("event",r,s,t,u)},
   trackException:function q(r,s){return n("exception",null,null,null,null,r,s)}}})
   (window,"XX-XXXXXXXXX-X",{anonymizeIp:true,colorDepth:true,characterSet:true,screenSize:true,language:true});
-</script>
-
-  <!-- !!!!!!!!!  FIX !!!!!!!  BAD URL for analytics.js
-<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID.
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
   </script>
-  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
--->
+  -->
 </body>
 
 </html>
