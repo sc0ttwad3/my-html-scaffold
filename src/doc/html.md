@@ -7,7 +7,7 @@ By default, HTML5 Boilerplate provides two `html` pages:
 
 * [`index.html`](#indexhtml) - a default HTML skeleton that should form the
   basis of all pages on your website
-* [`404.html`](#404html) - a placeholder 404 error page
+* `404.html` - a placeholder 404 error page
 
 
 ## `index.html`
@@ -32,71 +32,12 @@ attribute in the `<html>` as in this example:
 
 ### The order of the `<title>` and `<meta>` tags
 
-The order in which the `<title>` and the `<meta>` tags are specified is
-important because:
-
-1) the charset declaration (`<meta charset="utf-8">`):
-
-   * must be included completely within the [first 1024 bytes of the
-     document](https://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#charset)
-
-   * should be specified as early as possible (before any content that could
-     be controlled by an attacker, such as a `<title>` element) in order to
-     avoid a potential [encoding-related security
-     issue](https://code.google.com/p/doctype-mirror/wiki/ArticleUtf7) in
-     Internet Explorer
-
-2) the meta tag for compatibility mode
-   (`<meta http-equiv="x-ua-compatible" content="ie=edge">`):
-
-   * [needs to be included before all other tags except for the `<title>` and
-     the other `<meta>`
-     tags](https://msdn.microsoft.com/en-us/library/cc288325.aspx)
-
-
-### `x-ua-compatible`
-
-Internet Explorer 8/9/10 support [document compatibility
-modes](https://msdn.microsoft.com/en-us/library/cc288325.aspx) that affect the
-way webpages are interpreted and displayed. Because of this, even if your site's
-visitor is using, let's say, Internet Explorer 9, it's possible that IE will not
-use the latest rendering engine, and instead, decide to render your page using
-the Internet Explorer 5.5 rendering engine.
-
-Specifying the `x-ua-compatible` meta tag:
-
-```html
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-```
-
-or sending the page with the following HTTP response header
-
-```
-X-UA-Compatible: IE=edge
-```
-
-will force Internet Explorer 8/9/10 to render the webpage in the highest
-available mode in [the various cases when it may
-not](https://hsivonen.fi/doctype/#ie8), and therefore, ensure that anyone
-browsing your site is treated to the best possible user experience that
-browser can offer.
-
-If possible, we recommend that you remove the `meta` tag and send only the
-HTTP response header as the `meta` tag will not always work if your site is
-served on a non-standard port, as Internet Explorer's preference option
-`Display intranet sites in Compatibility View` is checked by default.
-
-If you are using Apache as your webserver, including the
-[`.htaccess`](https://github.com/h5bp/server-configs-apache) file takes care of
-the HTTP header. If you are using a different server, check out our [other
-server config](https://github.com/h5bp/server-configs).
-
-Starting with Internet Explorer 11, [document modes are
-deprecated](https://msdn.microsoft.com/library/bg182625.aspx#docmode).
-If your business still relies on older web apps and services that were
-designed for older versions of Internet Explorer, you might want to consider
-enabling [Enterprise Mode](https://blogs.msdn.microsoft.com/ie/2014/04/02/stay-up-to-date-with-enterprise-mode-for-internet-explorer-11/) throughout your company.
-
+The charset declaration (`<meta charset="utf-8">`) must be included completely 
+within the [first 1024 bytes of the document](https://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#charset)
+and should be specified as early as possible (before any content that could
+be controlled by an attacker, such as a `<title>` element) in order to avoid a 
+potential [encoding-related security issue](https://code.google.com/archive/p/doctype-mirror/wikis/ArticleUtf7.wiki)
+in Internet Explorer
 
 ## Meta Description
 
@@ -108,20 +49,27 @@ shown in the search results.
 <meta name="description" content="This is a description">
 ```
 
+Google's [Create good meta descriptions](https://support.google.com/webmasters/answer/35624?hl=en#meta-descriptions)
+documentation has useful tips on creating an effective description.
 
 ## Mobile Viewport
 
 There are a few different options that you can use with the [`viewport` meta
 tag](https://docs.google.com/present/view?id=dkx3qtm_22dxsrgcf4 "Viewport and
 Media Queries - The Complete Idiot's Guide"). You can find out more in [the
-Apple developer docs](https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html).
+MDN Web Docs](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag).
 HTML5 Boilerplate comes with a simple setup that strikes a good balance for general use cases.
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
+If you want to take advantage of edge-to-edge displays of iPhone X/XS/XR you can do
+so with additional viewport parameters. [Check the WebKit blog](https://webkit.org/blog/7929/designing-websites-for-iphone-x/) 
+for details.
+
 ## Web App Manifest
+
 HTML5 Boilerplate includes a simple web app manifest file. 
 
 The web app manifest is a simple JSON file that allows you to control how your 
@@ -156,8 +104,8 @@ web app development.
 ### Browser Upgrade Prompt
 
 The main content area of the boilerplate includes a prompt to install an up to
-date browser for users of IE 8 and lower. If you intended to support IE 8, then you
-should remove the snippet of code.
+date browser for users of IE 9 and lower. If you intended to support IE, then you
+should edit or remove the snippet of code.
 
 ## Modernizr
 
@@ -176,12 +124,12 @@ Starting with version 3 Modernizr can be customized using the [modernizr-config.
 
 If you need to include [polyfills](https://remysharp.com/2010/10/08/what-is-a-polyfill)
 in your project, you must make sure those load before any other JavaScript. If you're
-using some polyfill CDN service, like [cdn.polyfill.io](https://cdn.polyfill.io/),
+using a polyfill CDN service, like [cdn.polyfill.io](https://cdn.polyfill.io/),
 just put it before the other scripts in the bottom of the page:
 
 ```html
     <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script src="https://cdn.polyfill.io/v3/polyfill.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>
@@ -217,7 +165,7 @@ the Google Hosted version over the jQuery CDN because it was available
 over HTTPS (the jQuery CDN was not,) and it offered a better chance of
 hitting the cache lottery owing to the popularity of the Google CDN.
 The first issue is no longer valid and the second is far outweighed by
-being able to serve jQuery to Chinese users.
+being able to serve jQuery to users in China.
 
 While the jQuery CDN is a strong default solution your site or application may
 require a different configuration. Testing your site with services like
@@ -229,22 +177,29 @@ site or application.
 ### Google Universal Analytics Tracking Code
 
 Finally, an optimized version of the Google Universal Analytics tracking code is
-included. Google recommends that this script be placed at the top of the page.
+included.
+
+We use `analytics.js` rather than the newer `gtag.js` as 
+[it's faster and supports tasks and plugins](https://github.com/philipwalton/analyticsjs-boilerplate/issues/19#issuecomment-333714370)
+
+The beacon transport mechanism is used to send all hits [which saves HTTP requests and improves performance](https://philipwalton.com/articles/the-google-analytics-setup-i-use-on-every-site-i-build/#loading-analytics.js).
+
+Google recommends that this script be placed at the top of the page.
 Factors to consider: if you place this script at the top of the page, you’ll
 be able to count users who don’t fully load the page, and you’ll incur the max
 number of simultaneous connections of the browser.
 
 Further information:
 
-* [Optimizing the Google Universal Analytics
-  Snippet](https://mathiasbynens.be/notes/async-analytics-snippet#universal-analytics)
-* [Introduction to
+- [Introduction to
   Analytics.js](https://developers.google.com/analytics/devguides/collection/analyticsjs/)
-* [Google Analytics Demos & Tools](https://ga-dev-tools.appspot.com/)
+- [Google Analytics Demos & Tools](https://ga-dev-tools.appspot.com/)
 
-**N.B.** The Google Universal Analytics snippet is included by default mainly
+**N.B.** The Google Analytics snippet is included by default mainly
 because Google Analytics is [currently one of the most popular tracking
 solutions](https://trends.builtwith.com/analytics/Google-Analytics) out there.
 However, its usage isn't set in stone, and you SHOULD consider exploring the
 [alternatives](https://en.wikipedia.org/wiki/List_of_web_analytics_software)
-and use whatever suits your needs best!
+and use whatever suits your needs best.
+
+
