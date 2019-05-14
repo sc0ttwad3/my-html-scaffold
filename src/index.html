@@ -1,10 +1,10 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>my-html-scaffold</title>
   <!-- Short description of the page (limit to 150 characters) -->
   <!-- In *some* situations this description is used as a part of the snippet shown in the search results. -->
@@ -97,9 +97,28 @@
       eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
   </footer>
 	</div>
+
+  <!--
+     <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
+  <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
+
+  -->
+
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="//code.jquery.com/jquery-3.4.0.min.js" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.0.min.js"><\/script>')</script>
+  <script src="https://cdn.polyfill.io/v3/polyfill.min.js"></script>
+    <!-- must smaller drop-in for jQuery
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.1/cash.min.js"></script>
+      <script>
+        $(function () {
+          $('html').addClass ( 'dom-loaded' );
+          $('<footer>Appended with Cash</footer>').appendTo ( document.body );
+        });
+     </script>)
+    -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
 
